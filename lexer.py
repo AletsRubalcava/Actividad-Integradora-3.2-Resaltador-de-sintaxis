@@ -1,4 +1,4 @@
-SYMBOL, NUMBER, BOOLEAN, STRING, PARENTHESIS, ERROR = range(6)
+SYMBOL, NUMBER, BOOLEAN, STRING, PARENTHESIS, ERROR, END = range(7)
 
 def getToken(text, i):
     while i < len(text) and text[i].isspace():
@@ -8,6 +8,9 @@ def getToken(text, i):
         return None, None, i
         
     c = text[i]
+
+    if c == "$":
+        return END, "$", i+1
 
     # Symbol
     if c.islower():
@@ -32,18 +35,18 @@ def getToken(text, i):
         
     # String
     elif c == '"':
-        i += 1 # Skip first "
+        i += 1  # Skip first "
         start = i
 
         while i < len(text) and text[i] != '"':
-            if not (text.islower() or text.isdigit() or text[i] == " "):
+            if not (text[i].islower() or text[i].isdigit() or text[i] == " "):
                 return ERROR, text[i], i+1
             i += 1
 
         if i >= len(text):
             return ERROR, "String not closed", i
         
-        return STRING, text[start:i], i+1 # Consumes last "
+        return STRING, text[start:i], i+1  # Consumes last "
 
     # Parenthesis
     elif c in "()":
@@ -70,7 +73,3 @@ def lexer(text):
         tokens.append((type, lexeme))
 
     return tokens
-
-textInput = input("Ingresar Texto: ")
-tokens = lexer(textInput)
-print(tokens)

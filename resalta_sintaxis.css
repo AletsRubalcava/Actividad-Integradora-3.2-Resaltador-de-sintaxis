@@ -1,0 +1,72 @@
+/* resalta_sintaxis.css
+   Hoja de estilo para el resaltador de sintaxis
+   TC2037 Implementación de Métodos Computacionales
+   Alejandro Vila Casahonda - A01174693
+   Daniel Medina – A01286980
+   Alejandro Rubalcava Vargas- A01286513 */
+
+/* ── Page ──────────────────────────────────────────────────────────────────── */
+body {
+    background-color: #1e1e1e;
+    margin: 0;
+    padding: 24px;
+}
+
+/* ── Code block ────────────────────────────────────────────────────────────── */
+.code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #d4d4d4;  /* default text colour for anything not specifically styled */
+}
+
+/* ── Token colours ─────────────────────────────────────────────────────────── */
+
+/* Symbols  — one or more lowercase letters */
+.symbol {
+    color: #d4d4d4;
+}
+
+/* Numbers  — one or more digits */
+.number {
+    color: #4fc1ff;
+}
+
+/* Booleans — #t or #f */
+.boolean {
+    color: #569cd6;
+}
+
+/* Strings  — "..." */
+.string {
+    color: #6a9955;
+}
+
+/* Parentheses — ( ) */
+.parenthesis {
+    color: #ffd700;
+}
+
+/* End-of-program marker — $ */
+.end {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* ── Error styles ───────────────────────────────────────────────────────────── */
+
+/* The offending token that caused a lexical error */
+.error {
+    color: #f44747;
+    background-color: rgba(255, 0, 0, 0.15);
+    border-bottom: 2px solid #f44747;
+}
+
+/* The error legend appended at the bottom of the output */
+.error-msg {
+    display: block;
+    color: #f44747;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 8px;
+}

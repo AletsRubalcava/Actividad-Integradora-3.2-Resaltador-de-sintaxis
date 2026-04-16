@@ -80,8 +80,8 @@ def lexer(text):
     Tokenizes the complete input text.
 
     Returns a tuple (tokens, error_lexeme):
-      - Success: (list_of_all_tokens_including_whitespace, None)
-      - Failure: (partial_token_list_including_the_error_token, error_lexeme_string)
+        - Success: (list_of_all_tokens_including_whitespace, None)
+        - Failure: (partial_token_list_including_the_error_token, error_lexeme_string)
 
     Processing stops immediately on the first lexical error.
     """

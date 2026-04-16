@@ -4,8 +4,8 @@
 
 import sys
 from obten_token import (lexer,
-                         SYMBOL, NUMBER, BOOLEAN, STRING,
-                         PARENTHESIS, WHITESPACE, ERROR, END)
+                        SYMBOL, NUMBER, BOOLEAN, STRING,
+                        PARENTHESIS, WHITESPACE, ERROR, END)
 
 OUTPUT_FILE = "output.html" # cambiar para nuevo archivo
 
@@ -136,14 +136,14 @@ def elements():
     """<elements> ::= <exp> <elements> | ε"""
     # Keep consuming expressions until we see ")" or run out of tokens
     while (idx < len(parse_tokens) and
-           not (parse_tokens[idx][0] == PARENTHESIS and parse_tokens[idx][1] == ")")):
+        not (parse_tokens[idx][0] == PARENTHESIS and parse_tokens[idx][1] == ")")):
         exp()
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 print("Ingresa el programa (Ctrl+D para finalizar):")
-text = sys.stdin.read()
+text = input()
 
 # ── Step 1: Lexical analysis ──────────────────────────────────────────────────
 all_tokens, lex_error = lexer(text)

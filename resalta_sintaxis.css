@@ -29,27 +29,27 @@ body {
 
 /* Numbers  — one or more digits */
 .number {
-    color: #4fc1ff;
+    color: #58ff4f;
 }
 
 /* Booleans — #t or #f */
 .boolean {
-    color: #569cd6;
+    color: #ad50c2;
 }
 
 /* Strings  — "..." */
 .string {
-    color: #6a9955;
+    color: #c6a446;
 }
 
 /* Parentheses — ( ) */
 .parenthesis {
-    color: #ffd700;
+    color: #ff2200;
 }
 
 /* End-of-program marker — $ */
 .end {
-    color: #ffd700;
+    color: #35ffee;
     font-weight: bold;
 }
 

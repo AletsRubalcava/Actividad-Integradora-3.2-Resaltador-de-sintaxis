@@ -142,8 +142,16 @@ def elements():
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 
-print("Ingresa el programa (Ctrl+D para finalizar):")
-text = input()
+print("Ingresa el programa (termina con $):")
+
+lines = []
+while True:
+    line = input()
+    lines.append(line)
+    if "$" in line:
+        break
+
+text = "\n".join(lines)
 
 # ── Step 1: Lexical analysis ──────────────────────────────────────────────────
 all_tokens, lex_error = lexer(text)
